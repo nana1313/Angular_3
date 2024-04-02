@@ -1,0 +1,15 @@
+<button
+  (click)="condition = !condition"
+  [ngClass]="{ 'is-false': !condition, 'is-true': condition }"
+>
+  toggle condition to {{ condition ? "false" : "true" }}
+</button>
+<div [ngClass]="{ 'is-false': !condition, 'is-true': condition }">
+  <p *ngIf="!condition">
+    (A) This paraghraph is displayed because the codition is false
+  </p>
+  <p *ngIf="condition">
+    (B) Although the condition is true. this paragraph is displeyed because
+    myUnless set to false
+  </p>
+</div>
